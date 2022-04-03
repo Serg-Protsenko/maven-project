@@ -9,15 +9,15 @@ pipeline {
           sh 'mvn clean package'
         }
          post {
-         success {
-           echo 'Archving...'
-           archiveArtifacts artifacts:'**/target/*.war'
+           success {
+             echo 'Archving...'
+             archiveArtifacts artifacts:'**/target/*.war'
+           }
          }
-        }
        }
            stage ('Deployments') {
              parallel{
-               stage ('Deploy to staging')
+               stage ('Deploy to staging') {
                  steps {
                    sh "cp **/target/*.war /home/guy/programms/tomcat-staging/webapps"
                  }     
