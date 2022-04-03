@@ -24,7 +24,7 @@ pipeline {
                }
                stage ('Deploy to prod') {
                  steps {
-                   sh "cp **/target/*.war /home/guy/programms/tomcat-prod/webapps"od'
+                   sh "cp **/target/*.war /home/guy/programms/tomcat-prod/webapps"
                }
              }     
            }
